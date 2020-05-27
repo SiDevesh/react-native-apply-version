@@ -1,6 +1,6 @@
 {
   "name": "react-native-apply-version",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Apply the version in package.json to android/app/build.gradle and info.plist",
   "license": "MIT",
   "bin": {
