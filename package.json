@@ -1,11 +1,11 @@
 {
-  "name": "react-native-set-version",
+  "name": "react-native-apply-version",
   "version": "1.1.1",
-  "description": "Set the version in package.json, android/app/build.gradle and info.plist",
+  "description": "Apply the version in package.json to android/app/build.gradle and info.plist",
   "license": "MIT",
   "bin": {
-    "setVersion": "./build/index.js",
-    "set-version": "./build/index.js"
+    "applyVersion": "./build/index.js",
+    "apply-version": "./build/index.js"
   },
   "files": [
     "build",
@@ -13,12 +13,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/novom/react-native-set-version"
+    "url": "https://github.com/sidevesh/react-native-apply-version"
   },
   "keywords": [
     "version",
-    "setVersion",
-    "set-version",
+    "applyVersion",
+    "apply-version",
     "node",
     "javascript",
     "react-native",
@@ -26,23 +26,19 @@
     "semver"
   ],
   "bugs": {
-    "url": "https://github.com/novom/react-native-set-version/issues"
+    "url": "https://github.com/sidevesh/react-native-apply-version/issues"
   },
-  "homepage": "https://github.com/novom/react-native-set-version#readme",
+  "homepage": "https://github.com/sidevesh/react-native-apply-version#readme",
   "main": "index.js",
   "author": "Novom Interactive",
   "scripts": {
     "prepublishOnly": "yarn build",
     "build": "babel src --out-dir build --ignore \"src/**/*.spec.js\",\"src/**/*.test.js\"",
     "lint": "eslint .",
-    "start": "node .src/index.js",
-    "test": "yarn lint & yarn unitTests",
-    "unitTests": "jest --runInBand"
+    "start": "node .src/index.js"
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "gradle-to-js": "^2.0.0",
-    "manifest-android": "^0.1.1",
     "plist": "^3.0.1"
   },
   "devDependencies": {
@@ -52,7 +48,6 @@
     "babel-eslint": "^10.0.1",
     "eslint": "5.3.0",
     "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "jest": "^24.8.0"
+    "eslint-plugin-import": "^2.14.0"
   }
 }
