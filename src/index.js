@@ -28,21 +28,21 @@ function getPackageJson() {
 }
 
 async function setIosApplicationVersion(versionName, versionCode) {
-   display('');
-   display(chalk.yellow('IOS version info:'));
-   display(versionName);
-   display('');
-   display(chalk.yellow(`Will set CFBundleShortVersionString to ${chalk.bold.underline(versionName)}`));
-   display(chalk.yellow(`Will set CFBundleVersion to ${chalk.bold.underline(versionCode)}`));
-   try {
-     const plistInfo = plist.parse(fs.readFileSync(paths.infoPlist, 'utf8'));
-     plistInfo.CFBundleShortVersionString = versionName;
-     plistInfo.CFBundleVersion = versionCode;
-     fs.writeFileSync(paths.infoPlist, plist.build(plistInfo), 'utf8');
-     display(chalk.green(`Version replaced in ${chalk.bold('Info.plist')}`));
-   } catch (err) {
-     display(chalk.yellowBright(`${chalk.bold.underline('WARNING:')} Cannot find file with name ${path.resolve(paths.infoPlist)}. This file will be skipped`));
-   }
+  display('');
+  display(chalk.yellow('IOS version info:'));
+  display(versionName);
+  display('');
+  display(chalk.yellow(`Will set CFBundleShortVersionString to ${chalk.bold.underline(versionName)}`));
+  display(chalk.yellow(`Will set CFBundleVersion to ${chalk.bold.underline(versionCode)}`));
+  try {
+    const plistInfo = plist.parse(fs.readFileSync(paths.infoPlist, 'utf8'));
+    plistInfo.CFBundleShortVersionString = versionName;
+    plistInfo.CFBundleVersion = versionCode;
+    fs.writeFileSync(paths.infoPlist, plist.build(plistInfo), 'utf8');
+    display(chalk.green(`Version replaced in ${chalk.bold('Info.plist')}`));
+  } catch (err) {
+    display(chalk.yellowBright(`${chalk.bold.underline('WARNING:')} Cannot find file with name ${path.resolve(paths.infoPlist)}. This file will be skipped`));
+  }
 }
 
 async function setAndroidApplicationVersion(versionName, versionCode) {
@@ -77,11 +77,11 @@ async function setAndroidApplicationVersion(versionName, versionCode) {
 const changeVersion = async () => {
   const packageJSON = getPackageJson();
   display(chalk.yellow(`Version currently set on package.json is ${chalk.bold.underline(packageJSON.version)}`));
-  if (isVersionFormatCorrect(packageJSON.version)) {
+  if (!isVersionFormatCorrect(packageJSON.version)) {
     display(chalk.red(`${chalk.bold.underline('ERROR:')} version field in package.json must be present and in the format: major.minor.patch+versionCode`));
     process.exit(1);
   }
-  const [ versionName, versionCode ] = packageJSON.version.split('+');
+  const [versionName, versionCode] = packageJSON.version.split('+');
   paths.infoPlist = paths.infoPlist.replace('<APP_NAME>', packageJSON.name);
   await setAndroidApplicationVersion(versionName, versionCode);
   await setIosApplicationVersion(versionName, versionCode);
