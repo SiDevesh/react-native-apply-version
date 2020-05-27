@@ -30,9 +30,9 @@
   },
   "homepage": "https://github.com/sidevesh/react-native-apply-version#readme",
   "main": "index.js",
-  "author": "Novom Interactive",
+  "author": "sidevesh",
   "scripts": {
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "npm run build",
     "build": "babel src --out-dir build --ignore \"src/**/*.spec.js\",\"src/**/*.test.js\"",
     "lint": "eslint .",
     "start": "node .src/index.js"

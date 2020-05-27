@@ -28,12 +28,6 @@ npm:
 npm install react-native-aply-version --save-dev
 ```
 
-yarn:
-
-```bash
-yarn add react-native-apply-version --dev
-```
-
 You can then use this command in your project directory to run react-native-apply-version:
 
 npm:
@@ -44,14 +38,6 @@ $ npm run applyVersion
 $ npm run apply-version
 ```
 
-yarn:
-
-```bash
-$ yarn applyVersion
--- or --
-$ yarn apply-version
-```
-
 ### Global Installation
 
 This installation method allows you to use react-native-apply-version in any project.
@@ -60,12 +46,6 @@ npm:
 
 ```bash
 npm install -g react-native-apply-version
-```
-
-yarn:
-
-```bash
-yarn global add react-native-apply-version
 ```
 
 You can then use this command in your project directory to run react-native-apply-version:
