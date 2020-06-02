@@ -33,8 +33,6 @@ You can then use this command in your project directory to run react-native-appl
 npm:
 
 ```bash
-$ npm run applyVersion
--- or --
 $ npm run apply-version
 ```
 
@@ -51,8 +49,6 @@ npm install -g react-native-apply-version
 You can then use this command in your project directory to run react-native-apply-version:
 
 ```bash
-applyVersion
--- or --
 apply-version
 ```
 
