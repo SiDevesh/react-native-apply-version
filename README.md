@@ -1,4 +1,4 @@
-# react-native-aaply-version
+# react-native-apply-version
 
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -25,7 +25,7 @@ This is the recommended way to install react-native-apply-version.
 npm:
 
 ```bash
-npm install react-native-aply-version --save-dev
+npm install react-native-apply-version --save-dev
 ```
 
 You can then use this command in your project directory to run react-native-apply-version:
